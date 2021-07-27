@@ -3,16 +3,17 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2021-07-27T01:06:33.550Z",
+        "start_timestamp": "2021-07-27T03:27:55.225Z",
         "line": 4,
-        "name": "Savings\taccount\tredirect",
+        "name": "User should not be able to login",
         "description": "",
-        "id": "navigating-to-specific-accounts-in-accounts-activity;savings-account-redirect",
+        "id": "login-functionality;user-should-not-be-able-to-login",
         "after": [
           {
             "result": {
-              "duration": 842000000,
-              "status": "passed"
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"link text\",\"selector\":\"Account Summary\"}\n  (Session info: chrome\u003d92.0.4515.107)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-4GM93V4\u0027, ip: \u0027192.168.1.204\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_231\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\\Users\\kmasa\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62300}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: fa654641caf9e6e556fc1c8ff5c93690\n*** Element info: {Using\u003dlink text, value\u003dAccount Summary}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)\r\n\tat org.openqa.selenium.By$ByLinkText.findElement(By.java:220)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\r\n\tat com.zerobank.stepdefinitions.Hooks.tearDownScenario(Hooks.java:41)\r\n",
+              "duration": 10057000000,
+              "status": "failed"
             },
             "match": {
               "location": "com.zerobank.stepdefinitions.Hooks.tearDownScenario(io.cucumber.java.Scenario)"
@@ -24,55 +25,43 @@
         "steps": [
           {
             "result": {
-              "duration": 3391000000,
+              "duration": 2249000000,
               "status": "passed"
             },
             "line": 5,
-            "name": "the user is logged in",
+            "name": "User is in the login page",
             "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.the_user_is_logged_in()"
+              "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.user_is_in_the_login_page()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1292000000,
+              "duration": 308000000,
               "status": "passed"
             },
             "line": 6,
-            "name": "the user clicks on\tSavings link on the Account Summary\tpage",
+            "name": "Users with wrong username or wrong password should not be able to login",
             "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.theUserClicksOnSavingsLinkOnTheAccountSummaryPage()"
+              "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.users_with_wrong_username_or_wrong_password_should_not_be_able_to_login()"
             },
-            "keyword": "When "
+            "keyword": "Then "
           },
           {
             "result": {
-              "duration": 57000000,
+              "duration": 63000000,
               "status": "passed"
             },
             "line": 7,
-            "name": "the Account Activity page should be displayed",
-            "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.theAccountActivityPageShouldBeDisplayed()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 90000000,
-              "status": "passed"
-            },
-            "line": 8,
-            "name": "Account\tdrop down should have \"Savings\" selected",
+            "name": "User should see error message \"Login and/or password are wrong.\" should be displayed",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Savings\"",
+                  "val": "\"Login and/or password are wrong.\"",
                   "offset": 30
                 }
               ],
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.accountDropDownShouldHaveSelected(java.lang.String)"
+              "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.user_should_see_error_message_should_be_displayed(java.lang.String)"
             },
             "keyword": "And "
           }
@@ -84,16 +73,17 @@
         ]
       },
       {
-        "start_timestamp": "2021-07-27T01:06:39.288Z",
+        "start_timestamp": "2021-07-27T03:28:07.966Z",
         "line": 10,
-        "name": "Brokerage account redirect",
+        "name": "User should not be able to login",
         "description": "",
-        "id": "navigating-to-specific-accounts-in-accounts-activity;brokerage-account-redirect",
+        "id": "login-functionality;user-should-not-be-able-to-login",
         "after": [
           {
             "result": {
-              "duration": 829000000,
-              "status": "passed"
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"link text\",\"selector\":\"Account Summary\"}\n  (Session info: chrome\u003d92.0.4515.107)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-4GM93V4\u0027, ip: \u0027192.168.1.204\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_231\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.107, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\\Users\\kmasa\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62300}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: fa654641caf9e6e556fc1c8ff5c93690\n*** Element info: {Using\u003dlink text, value\u003dAccount Summary}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)\r\n\tat org.openqa.selenium.By$ByLinkText.findElement(By.java:220)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\r\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\r\n\tat com.sun.proxy.$Proxy17.click(Unknown Source)\r\n\tat com.zerobank.stepdefinitions.Hooks.tearDownScenario(Hooks.java:41)\r\n",
+              "duration": 10017000000,
+              "status": "failed"
             },
             "match": {
               "location": "com.zerobank.stepdefinitions.Hooks.tearDownScenario(io.cucumber.java.Scenario)"
@@ -105,55 +95,43 @@
         "steps": [
           {
             "result": {
-              "duration": 2812000000,
+              "duration": 147000000,
               "status": "passed"
             },
             "line": 11,
-            "name": "the user is logged in",
+            "name": "User is in the login page",
             "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.the_user_is_logged_in()"
+              "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.user_is_in_the_login_page()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 343000000,
+              "duration": 262000000,
               "status": "passed"
             },
             "line": 12,
-            "name": "the user clicks on\tBrokerage link on the Account Summary page",
+            "name": "Users with blank username or wrong password should not be able to login",
             "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.theUserClicksOnBrokerageLinkOnTheAccountSummaryPage()"
+              "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.users_with_blank_username_or_wrong_password_should_not_be_able_to_login()"
             },
-            "keyword": "When "
+            "keyword": "Then "
           },
           {
             "result": {
-              "duration": 44000000,
+              "duration": 38000000,
               "status": "passed"
             },
             "line": 13,
-            "name": "the Account Activity page should be displayed",
-            "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.theAccountActivityPageShouldBeDisplayed()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 128000000,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "Account\tdrop down should have \"Brokerage\" selected",
+            "name": "User should see error message \"Login and/or password are wrong.\" should be displayed",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Brokerage\"",
+                  "val": "\"Login and/or password are wrong.\"",
                   "offset": 30
                 }
               ],
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.accountDropDownShouldHaveSelected(java.lang.String)"
+              "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.user_should_see_error_message_should_be_displayed(java.lang.String)"
             },
             "keyword": "And "
           }
@@ -165,15 +143,15 @@
         ]
       },
       {
-        "start_timestamp": "2021-07-27T01:06:43.450Z",
-        "line": 16,
-        "name": "Checking account redirect",
+        "start_timestamp": "2021-07-27T03:28:18.434Z",
+        "line": 15,
+        "name": "User should be able to login using correct credentials",
         "description": "",
-        "id": "navigating-to-specific-accounts-in-accounts-activity;checking-account-redirect",
+        "id": "login-functionality;user-should-be-able-to-login-using-correct-credentials",
         "after": [
           {
             "result": {
-              "duration": 842000000,
+              "duration": 796000000,
               "status": "passed"
             },
             "match": {
@@ -186,217 +164,37 @@
         "steps": [
           {
             "result": {
-              "duration": 2820000000,
+              "duration": 108000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User is in the login page",
+            "match": {
+              "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.user_is_in_the_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1033000000,
               "status": "passed"
             },
             "line": 17,
-            "name": "the user is logged in",
+            "name": "Users with correct username or wrong password should be able to login",
             "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.the_user_is_logged_in()"
+              "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.users_with_correct_username_or_wrong_password_should_not_be_able_to_login()"
             },
-            "keyword": "Given "
+            "keyword": "Then "
           },
           {
             "result": {
-              "duration": 322000000,
+              "duration": 32000000,
               "status": "passed"
             },
             "line": 18,
-            "name": "the user clicks on\tChecking link on the Account Summary page",
+            "name": "Account\tsummary\tpage\tshould\tbe\tdisplayed",
             "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.theUserClicksOnCheckingLinkOnTheAccountSummaryPage()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 47000000,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "the Account Activity page should be displayed",
-            "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.theAccountActivityPageShouldBeDisplayed()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 93000000,
-              "status": "passed"
-            },
-            "line": 20,
-            "name": "Account\tdrop down should have \"Checking\" selected",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Checking\"",
-                  "offset": 30
-                }
-              ],
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.accountDropDownShouldHaveSelected(java.lang.String)"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@wip"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-07-27T01:06:47.579Z",
-        "line": 22,
-        "name": "Credit Card account redirect",
-        "description": "",
-        "id": "navigating-to-specific-accounts-in-accounts-activity;credit-card-account-redirect",
-        "after": [
-          {
-            "result": {
-              "duration": 838000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "com.zerobank.stepdefinitions.Hooks.tearDownScenario(io.cucumber.java.Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 2818000000,
-              "status": "passed"
-            },
-            "line": 23,
-            "name": "the user is logged in",
-            "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.the_user_is_logged_in()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 345000000,
-              "status": "passed"
-            },
-            "line": 24,
-            "name": "the user clicks on Credit card\tlink on the Account\tSummary\tpage",
-            "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.theUserClicksOnCreditCardLinkOnTheAccountSummaryPage()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 53000000,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "the Account Activity page should be displayed",
-            "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.theAccountActivityPageShouldBeDisplayed()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 106000000,
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "Account\tdrop down should have \"Credit Card\" selected",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Credit Card\"",
-                  "offset": 30
-                }
-              ],
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.accountDropDownShouldHaveSelected(java.lang.String)"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@wip"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2021-07-27T01:06:51.745Z",
-        "line": 28,
-        "name": "Loan account redirect",
-        "description": "",
-        "id": "navigating-to-specific-accounts-in-accounts-activity;loan-account-redirect",
-        "after": [
-          {
-            "result": {
-              "duration": 825000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "com.zerobank.stepdefinitions.Hooks.tearDownScenario(io.cucumber.java.Scenario)"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 2871000000,
-              "status": "passed"
-            },
-            "line": 29,
-            "name": "the user is logged in",
-            "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.the_user_is_logged_in()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 303000000,
-              "status": "passed"
-            },
-            "line": 30,
-            "name": "the user clicks on Loan link on the Account Summary page",
-            "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.theUserClicksOnLoanLinkOnTheAccountSummaryPage()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 52000000,
-              "status": "passed"
-            },
-            "line": 31,
-            "name": "the Account Activity page should be displayed",
-            "match": {
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.theAccountActivityPageShouldBeDisplayed()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 119000000,
-              "status": "passed"
-            },
-            "line": 32,
-            "name": "Account\tdrop down should have \"Loan\" selected",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Loan\"",
-                  "offset": 30
-                }
-              ],
-              "location": "com.zerobank.stepdefinitions.AccountActivityStepDefinitions.accountDropDownShouldHaveSelected(java.lang.String)"
+              "location": "com.zerobank.stepdefinitions.LoginStepDefinitions.accountSummaryPageShouldBeDisplayed()"
             },
             "keyword": "And "
           }
@@ -408,11 +206,11 @@
         ]
       }
     ],
-    "name": "Navigating\tto\tspecific\taccounts\tin\tAccounts\tActivity",
+    "name": "Login functionality",
     "description": "",
-    "id": "navigating-to-specific-accounts-in-accounts-activity",
+    "id": "login-functionality",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/AccountActivityNavigation.feature",
+    "uri": "file:src/test/resources/features/Login.feature",
     "tags": [
       {
         "name": "@wip",
