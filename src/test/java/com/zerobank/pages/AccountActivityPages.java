@@ -41,4 +41,11 @@ public class AccountActivityPages {
 
     @FindBy (linkText = "Account Summary")
     public WebElement summaryPage;
+
+    @FindBy (linkText = "Account Activity")
+    public WebElement accountActivity;
+
+
+    @FindBy (id = "aa_accountId")
+    public WebElement assertion;
 }
