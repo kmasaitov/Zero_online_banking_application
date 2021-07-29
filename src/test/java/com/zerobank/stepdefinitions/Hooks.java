@@ -37,9 +37,7 @@ public class Hooks {
         }
 
         System.out.println("AFTER--Teardown steps are being applied...");
-        AccountActivityPages pages = new AccountActivityPages();
-        pages.summaryPage.click();
-       // BrowserUtils.sleep(3);
+
        Driver.closeDriver();
     }
 

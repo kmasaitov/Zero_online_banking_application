@@ -20,7 +20,9 @@ public class LoginStepDefinitions {
 
     @Then("Users with wrong username or wrong password should not be able to login")
     public void users_with_wrong_username_or_wrong_password_should_not_be_able_to_login() {
+        BrowserUtils.sleep(2);
         loginPages.username.sendKeys("wrongUsername");
+        BrowserUtils.sleep(2);
         loginPages.password.sendKeys("wrongPassword");
         loginPages.submitButton.click();
     }
@@ -35,8 +37,8 @@ public class LoginStepDefinitions {
 
     @Then("User should see error message {string} should be displayed")
     public void user_should_see_error_message_should_be_displayed(String string) {
-        Assert.assertTrue(loginPages.failedCredentials.isDisplayed());
-
+      //  Assert.assertTrue(loginPages.failedCredentials.isDisplayed());
+        Assert.assertEquals(loginPages.failedCredentials.getText(), string);
     }
 
     @Then("Users with correct username or wrong password should be able to login")
@@ -50,7 +52,7 @@ public class LoginStepDefinitions {
         loginPages.proceedAnyway.click();
     }
 
-    @And("Account	summary	page	should	be	displayed")
+    @And("Account summary page should be displayed")
     public void accountSummaryPageShouldBeDisplayed() {
         Assert.assertTrue(loginPages.accountActivity.isDisplayed());
     }
